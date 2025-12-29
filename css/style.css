@@ -3,7 +3,7 @@ body{margin:0;font-family:'Times New Roman',Times,serif;font-weight:bold;overflo
 
 /* ===== 1. 背景图（完全不动） ===== */
 .header-bg{
-  background:url('../images/CattleNiaokan.png') center/cover no-repeat;
+  background:url('./images/CattleNiaokan.png') center/cover no-repeat;
   height:100px;               /* 让整张图都能显示 */
   box-shadow:0 4px 12px rgba(0,0,0,.1);
   border-bottom:2px solid #c8e6c9;
