@@ -1,0 +1,203 @@
+/* ===== 0. 通用 ===== */
+body{margin:0;font-family:'Times New Roman',Times,serif;font-weight:bold;overflow-y:hidden;   /* 彻底去掉下拉 */}
+
+/* ===== 1. 背景图（完全不动） ===== */
+.header-bg{
+  background:url('../images/CattleNiaokan.png') center/cover no-repeat;
+  height:100px;               /* 让整张图都能显示 */
+  box-shadow:0 4px 12px rgba(0,0,0,.1);
+  border-bottom:2px solid #c8e6c9;
+}
+
+/* ===== 2. 导航：高级玻璃版 ===== */
+.header-box nav{
+  display:inline-block;
+  margin-top:0;
+
+  /* 玻璃质感 */
+  background:rgba(255,255,255,.25);
+  backdrop-filter:blur(10px) saturate(180%);
+  -webkit-backdrop-filter:blur(10px) saturate(180%);
+  border:1px solid rgba(255,255,255,.35);
+
+  /* 圆角 & 阴影 */
+  border-radius:18px;
+  box-shadow:0 8px 10px rgba(0,0,0,.15);
+
+  /* 内边距 */
+  padding:6px 6px;
+}
+
+/* 列表横向 */
+.header-box nav ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  gap:40px;
+}
+/* 链接文字 */
+.header-box nav a{
+  color:#080808;    
+  font-size:24px;
+  font-weight:600;
+  text-decoration:none;
+  letter-spacing:.5px;
+  transition:all .3s ease;
+  padding:0px 0;
+  position:relative;
+}
+
+/* 悬停下划线动效 */
+.header-box nav a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:0;
+  height:2px;
+  background:#004d40;
+  transition:width .35s ease;
+}
+.header-box nav a:hover::after,
+.header-box nav a.current::after{width:100%;}
+
+/* ===== 3. 标语位置微调 ===== */
+.slogan{
+  position:absolute;
+  top:60px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:46px;
+  color:#fff;
+  text-shadow:2px 2px 8px rgba(0,0,0,.7);
+  margin:0;
+}
+
+/* 让 nav 水平居中 */
+.header-box{text-align:center;position:relative;}
+
+
+
+/* 固定在右下角 */
+#weatherBox{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:180px;               /* 可稍窄 */
+  background:rgba(0,0,0,.55);
+  backdrop-filter:blur(8px);
+  color:#fff;
+  border-radius:12px;
+  padding:12px;
+  font-size:14px;
+  box-shadow:0 8px 24px rgba(0,0,0,.25);
+  z-index:999;
+}
+
+.title select{
+  width:100%;
+  background:transparent;
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:6px;
+  color:#fff;
+  padding:4px;
+  outline:none;
+}
+.title select option{background:#222;}
+
+.selector{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:8px 0;
+}
+.selector button{
+  background:transparent;
+  border:none;
+  color:#fff;
+  cursor:pointer;
+  font-size:16px;
+  padding:0 6px;
+  outline:none;
+}
+.selector button:hover{opacity:.7;}
+
+.varValue{
+  text-align:center;
+  font-size:26px;
+  font-weight:700;
+  margin-top:4px;
+}
+
+
+
+    #map {
+      width: 100%;
+      height: calc(100vh - 100px);
+    }
+
+    .control-box {
+      position: absolute;
+      bottom: 40px;
+      right: 60px;
+      background: rgba(236, 205, 227, 0.95);
+      padding: 20px 24px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 36px;
+      font-weight: bold;
+      z-index: 999;
+      width: 360px;
+    }
+
+    .control-box label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .control-box select,
+    .control-box input,
+    .control-box button {
+      display: block;
+      width: 100%;
+      margin: 12px 0;
+      padding: 12px;
+      font-size: 30px;
+      font-weight: bold;
+      font-family: 'Times New Roman', Times, serif;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    .legend-box {
+      position: absolute;
+      top: 10px;
+      right: 170px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #ccc;
+      padding: 10px 14px;
+      font-family: 'Times New Roman', serif;
+      font-size: 30px;
+      font-weight: bold;
+      border-radius: 6px;
+      z-index: 999;
+      margin-top: 170px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .legend-color {
+      width: 24px;
+      height: 14px;
+      margin-right: 8px;
+      border: 1px solid #999;
+    }
