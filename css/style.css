@@ -2,14 +2,14 @@
 body{margin:0;font-family:'Times New Roman',Times,serif;font-weight:bold;overflow-y:hidden;   /* 彻底去掉下拉 */}
 
 /* ===== 1. 背景图（完全不动） ===== */
-.header-bg-thi{
-  background:url('images/Metlogo.png') center/cover no-repeat;
+.header-bg-aq{
+  background:url('./images/Dacattle.png') center/cover no-repeat;
   height:100px;               /* 让整张图都能显示 */
   box-shadow:0 4px 12px rgba(0,0,0,.1);
   border-bottom:2px solid #c8e6c9;
 }
-.header-bg-aq{
-  background:url('images/Dacattle.png') center/cover no-repeat;
+.header-bg-thi{
+  background:url('./images/Metlogo.png') center/cover no-repeat;
   height:100px;               /* 让整张图都能显示 */
   box-shadow:0 4px 12px rgba(0,0,0,.1);
   border-bottom:2px solid #c8e6c9;
