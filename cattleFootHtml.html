@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Platform for Forecasting Heat Stress in Jiangsu Province</title>
+  <!-- OpenLayers CSS -->
+  <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" type="text/css" />
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    body { margin: 0; }
+    #map { width: 100vw; height: 100vh; }
+
+    #popup {
+      display: none;
+      position: absolute;
+      background: #fff;
+      padding: 10px;
+      border: 1px solid #ccc;
+      z-index: 1000;
+      font-size: 18px;
+      font-family: 'Times New Roman';
+    }
+
+    .control-box {
+      position: absolute;
+      bottom: 40px;
+      right: 60px;
+      background: rgba(236, 205, 227, 0.95);
+      padding: 20px 24px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 36px;
+      font-weight: bold;
+      z-index: 999;
+      width: 360px;
+    }
+
+    /* 图例样式 */
+    .legend-box-cattle {
+      position: absolute;
+      bottom: 120px;
+      right: 150px;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid #ccc;
+      padding: 14px 20px;
+      border-radius: 10px;
+      font-family: 'Times New Roman', serif;
+      font-size: 33px;
+      font-weight: bold;
+      z-index: 999;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .legend-color {
+      width: 30px;
+      height: 18px;
+      margin-right: 10px;
+      border: 1px solid #999;
+    }
+
+    #popup select, #popup button {
+      font-size: 16px;
+      font-family: 'Times New Roman';
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header-box">
+    <div class="header-bg"></div>
+    <h1 class="slogan"></h1>
+    <nav>
+      <ul>
+        <li><a href="./index.html">Temperature-Humidity Index</a></li>
+        <li><a href="./metHtml.html">Meteorological Condition</a></li>
+        <li><a href="./aqHtml.html">Air Quality Condition</a></li>
+        <li><a href="./cattleFootHtml.html">Pollutant Dispersion Trajectory</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="map"></div>
+
+  <!-- 图例 -->
+  <div class="legend-box-cattle">
+    <div class="legend-item"><div class="legend-color" style="background:red;"></div>Strong Impact Zone</div>
+    <div class="legend-item"><div class="legend-color" style="background:orange;"></div>Moderate Impact Zone</div>
+    <div class="legend-item"><div class="legend-color" style="background:green;"></div>Slight Impact Zone</div>
+    <div class="legend-item"><div class="legend-color" style="background:blue;"></div>Weak Impact Zone</div>
+  </div>
+
+  <div id="popup" style="
+    position: absolute;
+    background: #fff;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    font-size: 26px;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    border-radius: 6px;
+  ">
+    <label for="dateSelect" style="font-size: 26px; font-weight: bold;">Select hour:</label>
+    <select id="dateSelect" style="font-size: 26px; font-weight: bold; margin-left: 6px; padding: 4px;"></select>
+    <button onclick="loadTrajectory()" style="font-size: 26px; font-weight: bold; margin-left: 8px; padding: 4px 10px; cursor: pointer;">Load</button>
+  </div>
+
+  <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+  <script src="https://pfplatform.oss-cn-beijing.aliyuncs.com/animal-thi/footjs.js"></script>
+ 
+</body>
+</html>
